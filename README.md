@@ -9,14 +9,15 @@
 - 装備したときの発動スキル合計を表示
 
 ## 使い方
-`index.html` をブラウザで開くだけで動きます（ビルド不要）。
+`public/index.html` をブラウザで開くだけで動きます（ビルド不要）。
+
+`main` ブランチに push すると Cloudflare Workers に自動でデプロイされます（設定は `wrangler.jsonc`、配信するのは `public/` の中身だけ）。
 
 ## データの更新
 ```sh
-python3 tools/update_data.py   # 公式サイトから data/gear.js を再生成
-./tools/build_site.sh          # 公開用ファイルを ~/Desktop/monhan-site にまとめる
+python3 tools/update_data.py   # 公式サイトから public/data/gear.js を再生成
 ```
-漢字を含む新しいスキルが増えたら、`data/skill-readings.js` に読み仮名を追加してください。
+漢字を含む新しいスキルが増えたら、`public/data/skill-readings.js` に読み仮名を追加してください。
 
 ## 注意
 データは [モンスターハンターNow 公式サイト](https://monsterhunternow.com/ja/armor) の掲載内容をもとにしています。

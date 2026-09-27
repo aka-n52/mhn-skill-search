@@ -1,0 +1,9 @@
+// Cloudflare Workers の設定（静的サイトとして index.html などを配信する）
+{
+  "name": "mhn-skill-search",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public"
+  }
+}

@@ -12,7 +12,7 @@ from pathlib import Path
 
 ARMOR_URL = "https://monsterhunternow.com/ja/armor"
 WEAPON_URL = "https://monsterhunternow.com/ja/weapons"
-OUT = Path(__file__).resolve().parent.parent / "data" / "gear.js"
+OUT = Path(__file__).resolve().parent.parent / "public" / "data" / "gear.js"
 PARTS = {"HEAD": "head", "CHEST": "chest", "ARMS": "arms", "TORSO": "waist", "LEGS": "legs"}
 WEAPON_TYPES = {
     "SWORD_SHIELD": "片手剣",
