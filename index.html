@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>モンハンNow スキル検索</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>モンハンNow 装備スキル検索</h1>
+    <p class="sub">スキルを選ぶと、そのスキルが付く武器・防具を部位ごとに一覧表示します。</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel-head">
+        <h2>スキルを選ぶ</h2>
+        <div class="filters">
+          <label class="grade">武器種
+            <select id="weapon-type"></select>
+          </label>
+          <label class="grade">グレード
+            <select id="grade"></select>
+          </label>
+        </div>
+      </div>
+      <div class="search-row">
+        <input id="skill-input" list="skill-list" placeholder="スキル名を入力（例: 弱点特効）" autocomplete="off" />
+        <datalist id="skill-list"></datalist>
+        <button id="add-skill">追加</button>
+      </div>
+      <ul id="selected-skills" class="chips"></ul>
+      <details>
+        <summary>スキル一覧から選ぶ</summary>
+        <div id="all-skills"></div>
+      </details>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>該当する装備</h2>
+        <label class="toggle"><input type="checkbox" id="match-all" /> 選んだスキルを全部持つ装備のみ</label>
+      </div>
+      <div id="results" class="parts"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>組み合わせ候補</h2>
+        <button id="find-combos">目標Lvを満たす組み合わせを探す</button>
+      </div>
+      <div id="combos"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>現在の装備</h2>
+        <button id="clear-equip" class="ghost">装備をリセット</button>
+      </div>
+      <div id="equip" class="equip"></div>
+      <h3>発動スキル合計</h3>
+      <ul id="totals" class="totals"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>データ出典: モンスターハンターNow 公式サイト <span id="sources"></span>（<span id="updated"></span> 取得）<br />
+      最新の情報はゲーム内で確認してください。<br />
+      本サイトは株式会社カプコンおよびNiantic, Inc.とは関係ありません。</p>
+  </footer>
+
+  <script src="data/gear.js"></script>
+  <script src="data/skill-readings.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
